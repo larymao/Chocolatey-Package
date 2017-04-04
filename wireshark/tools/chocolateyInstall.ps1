@@ -20,5 +20,4 @@ $packageArgs = @{
     silentArgs = '/S'
     registryUninstallerKey = $packageName
 }
-
 Install-ChocolateyPackage @packageArgs
