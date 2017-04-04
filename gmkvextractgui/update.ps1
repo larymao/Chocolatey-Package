@@ -20,4 +20,4 @@ function global:au_GetLatest {
     }
 }
 
-Update-Package -NoCheckUrl -NoCheckChocoVersion
+Update-Package -NoCheckUrl -NoCheckChocoVersion -ChecksumFor none

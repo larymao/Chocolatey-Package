@@ -12,10 +12,10 @@ function global:au_SearchReplace {
 function global:au_GetLatest {
 	$page = Invoke-WebRequest -UseBasicParsing -Uri "http://www.torchsoft.com/node/12"
 	$version = $page.Content -Split " " -Match "^\d+(\.\d+){2}$" | Select-Object -First 1
-	$Latest = @{
+
+	return @{
 		Version = "${version}${subversion}";
 	}
-	return $Latest
 }
 
-Update-Package -NoCheckUrl
+Update-Package -NoCheckUrl -NoCheckChocoVersion -ChecksumFor none

@@ -1,20 +1,14 @@
 ﻿$ErrorActionPreference = 'Stop'
 
-$packageName  = 'registry-workshop'
-$url          = 'http://www.torchsoft.com/download/RegistryWorkshop_chs.exe'
-$checksum     = 'cac833119633357a966e3b64b165da7fc10bf787efef8e1f9bb3029d7310a97e'
-$checksumType = 'sha256'
-$toolsPath    = Split-Path $MyInvocation.MyCommand.Definition
+$packageName = 'registry-workshop'
+$url = 'http://www.torchsoft.com/download/RegistryWorkshop_chs.exe'
+$toolsPath = Split-Path $MyInvocation.MyCommand.Definition
 
 $packageArgs = @{
-    packageName    = $packageName
-    url            = $url
-    checksum       = $checksum
-    checksumType   = $checksumType
-    url64          = $url
-    checksum64     = $checksum
-    checksumType64 = $checksumType
-    unzipLocation  = $toolsPath
+    packageName = $packageName
+    url = $url
+    url64 = $url
+    unzipLocation = $toolsPath
 }
 
 Install-ChocolateyZipPackage @packageArgs

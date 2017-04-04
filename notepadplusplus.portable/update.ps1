@@ -3,8 +3,8 @@
 function global:au_SearchReplace {
     @{
         'tools\chocolateyInstall.ps1' = @{
-            "(^[$]url32\s*=\s*)('.*')"          = "`$1'$($Latest.URL32)'"
-            "(^[$]checksum32\s*=\s*)('.*')"     = "`$1'$($Latest.Checksum32)'"
+            "(^[$]url32\s*=\s*)('.*')" = "`$1'$($Latest.URL32)'"
+            "(^[$]checksum32\s*=\s*)('.*')" = "`$1'$($Latest.Checksum32)'"
             "(^[$]checksumType32\s*=\s*)('.*')" = "`$1'$($Latest.ChecksumType32)'"
         }
     }
@@ -23,10 +23,10 @@ function global:au_GetLatest {
     $sha1sum = $sha1sum.Substring(0, $sha1sum.IndexOf(" "))
 	
     return @{
-        Version        = $version;
-        URL32          = "$base/npp.$version.bin.7z";
+        Version = $version;
+        URL32 = "$base/npp.$version.bin.7z";
         ChecksumType32 = 'sha1';
-        Checksum32     = $sha1sum;
+        Checksum32 = $sha1sum;
     }
 }
 
