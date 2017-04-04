@@ -15,17 +15,15 @@ function global:au_GetLatest {
     $url = $request.Headers.Location
     $version = $url -Split "/" | Select-Object -Last 1
     $url = "https://github.com/SubtitleEdit/subtitleedit/releases/download/$version/SE$($version.Replace(".", '')).zip"
-    $page = Invoke-WebRequest -Uri "https://github.com/SubtitleEdit/subtitleedit/releases/tag/$version"
-    $html = $page.AllElements | Where-Object {$_.tagName -eq "P" -and $_.innerText -Match "SE$($version.Replace(".", '')).zip*"} | Select-Object -First 1 -ExpandProperty innerText
-    $html = $html -split "\n"
-    $sha1sum = $html -match "SHA1" | ConvertFrom-String -PropertyNames algorithmic, usage, sum | Select-Object -First 1 -ExpandProperty sum
+    $page = Invoke-WebRequest -UseBasicParsing -Uri "https://github.com/SubtitleEdit/subtitleedit/releases/tag/$version"
+    $sha1sum = $page.Content -split "<|>|\n" -match "^[0-9a-f]{40}$" | Select-Object -First 1 -Skip 1
 	
     return @{
-        Version = $version;
-        URL32 = $url;
-        Checksum32 = $sha1sum;
-        ChecksumType32 = 'sha1';
+        Version = $version
+        URL32 = $url
+        Checksum32 = $sha1sum
+        ChecksumType32 = 'sha1'
     }
 }
 
-Update-Package -NoCheckUrl -ChecksumFor none
+Update-Package -NoCheckUrl -NoCheckChocoVersion -ChecksumFor none
