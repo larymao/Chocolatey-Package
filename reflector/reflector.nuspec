@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+	<metadata>
+		<id>reflector</id>
+		<version>9.0.2.546</version>
+		<title>.NET Reflector</title>
+		<authors>Red Gate Software, Inc.</authors>
+		<owners>echizenryoma</owners>
+		<projectUrl>http://www.red-gate.com/products/dotnet-development/reflector/</projectUrl>
+		<iconUrl>http://www.red-gate.com/assets/INTERIM/assets/products/dotnet-reflector/images/dotnet-reflector.svg</iconUrl>
+		<description>
+Look inside any .NET code
+
+Debug your application
+
+Follow bugs through your application to see where the problem is – your own code, third-party libraries, or components used by your application.
+Understand how applications work
+
+Inherited an application with no documentation and no comments? Use .NET Reflector to understand how the code runs and avoid bugs.
+Look inside APIs, SharePoint, and other third-party platforms
+
+Third-party platforms aren't always well-documented. Use .NET Reflector to look inside their assemblies, and see how they work and which APIs you can call.
+Try it now, choose your version later.
+		</description>
+		<summary>Look inside any .NET code</summary>
+		<tags>debug .net code reflector</tags>
+		<packageSourceUrl>https://github.com/echizenryoma/Chocolatey-Package/tree/master/refactor</packageSourceUrl>
+	</metadata>
+	<files>
+		<file src="tools\**" target="tools" />
+	</files>
+</package>
