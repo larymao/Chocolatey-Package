@@ -52,6 +52,7 @@ $global:info = Update-AUPackages -Name $Name -Options $Options
 if (($global:info | Where-Object Updated -eq $true | Measure-Object).Count -gt 0) {
     $Utf8NoBomEncoding = New-Object System.Text.UTF8Encoding $False
     [System.IO.File]::WriteAllLines($reportPath, $(Get-Content "$reportPath.tmp"), $Utf8NoBomEncoding)
+    Remove-Item "$reportPath.tmp" -Force
 
     git add "README.md"
     git commit -m "AU: $($packages.Length) updated"
