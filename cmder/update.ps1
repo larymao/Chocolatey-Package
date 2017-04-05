@@ -11,15 +11,16 @@ function global:au_SearchReplace {
 }
 
 function global:au_GetLatest {
-    $request = Invoke-WebRequest -UseBasicParsing -Uri "https://github.com/cmderdev/cmder/releases/latest"  -MaximumRedirection 0 -ErrorAction Ignore
-    $version = ($request.Headers.Location -Split "/" -match "^v\d+(\.\d+)+").Replace("v", '').Trim()
+    $page = Invoke-WebRequest -UseBasicParsing -Uri "http://cmder.net/"
+    $url = ($page.Links | Where-Object href -CMatch cmder.7z| Select-Object -First 1 -ExpandProperty href).Trim()
+    $version = ($url -Split "/" -match "^v\d+(\.\d+)+").Replace("v", '').Trim()
 
     $page = Invoke-WebRequest -UseBasicParsing -Uri "https://github.com/cmderdev/cmder/releases/download/v${version}/hashes.txt"
     $md5sum = ($page.RawContent -split "\n" | Select-Object -Last 1 -Skip 3).Trim().ToLower()
 	
     return @{
         Version = $version;
-        URL32 = "https://github.com/cmderdev/cmder/releases/download/v${version}/cmder.7z";
+        URL32 = $url;
         Checksum32 = $md5sum;
         ChecksumType32 = 'md5';
     }

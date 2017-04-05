@@ -11,7 +11,7 @@ function global:au_SearchReplace {
 }
 
 function global:au_GetLatest {
-    $request = Invoke-WebRequest -UseBasicParsing -Uri "https://github.com/SubtitleEdit/subtitleedit/releases/latest"  -MaximumRedirection 0 -ErrorAction Ignore
+    $request = Invoke-WebRequest -UseBasicParsing -Uri "https://github.com/SubtitleEdit/subtitleedit/releases/latest" -MaximumRedirection 0 -ErrorAction Ignore
     $url = $request.Headers.Location
     $version = $url -Split "/" | Select-Object -Last 1
     $url = "https://github.com/SubtitleEdit/subtitleedit/releases/download/$version/SE$($version.Replace(".", '')).zip"
