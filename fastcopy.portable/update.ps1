@@ -11,8 +11,7 @@ function global:au_SearchReplace {
 
 function global:au_GetLatest {
     $page = Invoke-WebRequest -UseBasicParsing -Uri "https://ipmsg.org/tools/fastcopy.html.en"
-    $page.Content -match "FastCopy\s+v\d+\.\d+\s+download"
-    $version = $Matches[0] -split " |v" -match "\d+\.\d+"
+    $version = ($page.Content -split "\n|<|>" -match "FastCopy\s+v\d+(\.\d+)+\s+download").Trim() -split "\s|v" -match "^\d+(\.\d+)+$"
 		
     return @{
         Version = $version;
