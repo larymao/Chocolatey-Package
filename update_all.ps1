@@ -25,6 +25,7 @@ $Options = [ordered]@{
     Git = @{
         User = $Env:github_user
         Password = $Env:github_password
+        Force = $true
     }
 
     ForcedPackages = $ForcedPackages -split ' '
@@ -45,3 +46,11 @@ if ($ForcedPackages) {
 }
 $global:au_Root = $Root
 $global:info = Update-AUPackages -Name $Name -Options $Options
+
+if ($global:info.updated) {
+    git add "README.md"
+    git comment -m "AU: $($packages.Length) updated"
+
+    Write-Host "Pushing Report"
+    git push -q
+}
