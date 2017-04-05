@@ -1,7 +1,7 @@
 ﻿$ErrorActionPreference = 'Stop'
 
 $packageName = 'filevista'
-$url = 'https://www.gleamtech.com/downloads/FileVista-v7.8.0.0-Installer.zip'
+$url = 'https://www.gleamtech.com/downloads/FileVista-v7.8.1.0-Installer.zip'
 $toolsPath = Split-Path -parent $MyInvocation.MyCommand.Definition
 
 $packageArgs = @{
