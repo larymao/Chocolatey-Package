@@ -42,7 +42,7 @@ Note that when upgrading to &gt;=0.9.10, if `$env:ChocolateyBinRoot` exists, the
 		<copyright>© 2013 Samuel Vasko</copyright>
 		<tags>console terminal cli</tags>
 		<projectSourceUrl>https://github.com/cmderdev/cmder/</projectSourceUrl>
-		<packageSourceUrl>https://github.com/echizenryoma/Chocolatey-Package/tree/master/cmder/</packageSourceUrl>
+		<packageSourceUrl>https://github.com/echizenryoma/Chocolatey-Package/tree/master/cmder.mini/</packageSourceUrl>
 		<docsUrl>https://github.com/cmderdev/cmder/wiki</docsUrl>
 		<bugTrackerUrl>https://github.com/cmderdev/cmder/issues</bugTrackerUrl>
 	</metadata>
