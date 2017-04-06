@@ -1,12 +1,16 @@
 ﻿$packageName = 'cmder'
-$toolsPath = Split-Path -Parent $MyInvocation.MyCommand.Definition
-$unPath = Join-Path $toolsPath 'Uninstall-ChocolateyPath.psm1'
-$binRoot = Get-BinRoot
-$installPath = Join-Path $binRoot $packageName
+$toolsPath = Join-Path $(Get-ToolsLocation) $packageName
 
-Import-Module $unPath
-Uninstall-ChocolateyPath $installPath 'Machine'
+# Remove from PATH of System
+$envPath = [Environment]::GetEnvironmentVariable('Path', [System.EnvironmentVariableTarget]::Machine)
+if (!$envPath.ToLower().Contains($toolsPath.ToLower())) {
+    Write-Host "PATH environment variable does not have $toolsPath in it."
+    return
+}
+$envPath = $envPath -split ";"
+$envPath = $envPath -ne $toolsPath
+[Environment]::SetEnvironmentVariable('Path', $envPath, [System.EnvironmentVariableTarget]::Machine)
 
-if (Test-Path $installPath) {
-    Remove-Item -Path $installPath -Recurse -Force
+if (Test-Path $toolsPath) {
+    Remove-Item -Path $toolsPath -Recurse -Force
 }
