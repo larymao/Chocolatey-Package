@@ -1,5 +1,5 @@
-﻿$packageName = 'cmder'
-$toolsPath = Join-Path $(Get-ToolsLocation) $packageName
+$packageName = 'git'
+$toolsPath = Join-Path $(Get-ToolsPath) $packageName
 
 # Remove from PATH of System
 $envPath = [Environment]::GetEnvironmentVariable('Path', [System.EnvironmentVariableTarget]::Machine) -split ";"
