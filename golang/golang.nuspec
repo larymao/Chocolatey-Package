@@ -4,7 +4,7 @@
 	<metadata>
 		<!-- == PACKAGE SPECIFIC SECTION == -->
 		<id>golang</id>
-		<version>1.8</version>
+		<version>1.8.1</version>
 		<packageSourceUrl>https://github.com/echizenryoma/Chocolatey-Package/tree/master/golang</packageSourceUrl>
 		<owners>echizenryoma</owners>
 		<!-- ============================== -->
