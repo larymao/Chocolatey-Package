@@ -6,7 +6,7 @@ if (Test-Path $PSScriptRoot/update_vars.ps1) {
     . $PSScriptRoot/update_vars.ps1
 }
 
-$reportPath = Join-Path $PSScriptRoot "README.md"
+$reportFile = Join-Path $PSScriptRoot "README.md"
 
 $Options = [ordered]@{
     Timeout = 60
@@ -16,7 +16,7 @@ $Options = [ordered]@{
 
     Report = @{
         Type = 'markdown'
-        Path = "$reportPath.tmp"
+        Path = "$reportFile.tmp"
         Params = @{
             NoAppVeyor = $false
             NoIcons = $false
@@ -50,12 +50,10 @@ $global:au_Root = $Root
 $global:info = Update-AUPackages -Name $Name -Options $Options
 
 if (($global:info | Where-Object Updated -eq $true | Measure-Object).Count -gt 0) {
-    $Utf8NoBomEncoding = New-Object System.Text.UTF8Encoding $False
-    [System.IO.File]::WriteAllLines($reportPath, $(Get-Content "$reportPath.tmp"), $Utf8NoBomEncoding)
-    Remove-Item "$reportPath.tmp" -Force
+    Get-Content -Path "$reportFile.tmp" | Set-Content -Path $reportFile -Encoding UTF8
 
     git add "README.md"
-    git commit -m "Report Update"
+    git commit -m "report update"
 
     Write-Host "Pushing Report"
     git push -q
