@@ -55,7 +55,7 @@ if (($global:info | Where-Object Updated -eq $true | Measure-Object).Count -gt 0
     Remove-Item "$reportPath.tmp" -Force
 
     git add "README.md"
-    git commit -m "AU: $($info.updated) updated"
+    git commit -m "Report Update"
 
     Write-Host "Pushing Report"
     git push -q
