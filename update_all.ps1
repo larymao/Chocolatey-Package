@@ -57,4 +57,6 @@ if (($global:info | Where-Object Updated -eq $true | Measure-Object).Count -gt 0
 
     Write-Host "Pushing Report"
     git push -q
+
+    Remove-Item -Path "$reportFile.tmp" -Force | Out-Null
 }
