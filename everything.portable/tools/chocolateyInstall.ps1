@@ -1,11 +1,11 @@
 ﻿$ErrorActionPreference = 'Stop'
 
 $packageName    = 'everything.portable'
-$url32          = 'https://www.voidtools.com/Everything-1.4.1.809b.x86.zip'
-$checksum32     = 'da8b29a23731f9c9354958fdcc59a17d'
+$url32          = 'https://www.voidtools.com/Everything-1.4.1.867b.x86.zip'
+$checksum32     = 'ebe915968d83ed40b56ad88bb4f358b4'
 $checksumType32 = 'md5'
-$url64          = 'https://www.voidtools.com/Everything-1.4.1.809b.x64.zip'
-$checksum64     = 'a527a9d01430ae76362b08a96624db65'
+$url64          = 'https://www.voidtools.com/Everything-1.4.1.867b.x64.zip'
+$checksum64     = 'cecaf07a245e99127acff1e0b1b19094'
 $checksumType64 = 'md5'
 $toolsPath      = Split-Path -parent $MyInvocation.MyCommand.Definition
 

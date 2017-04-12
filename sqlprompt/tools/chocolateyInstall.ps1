@@ -1,7 +1,7 @@
 ﻿$ErrorActionPreference = 'Stop'
 
 $packageName  = 'sqlprompt'
-$url          = 'https://download.red-gate.com/checkforupdates/SQLPrompt/SQLPrompt_7.5.0.912.exe'
+$url          = 'https://download.red-gate.com/checkforupdates/SQLPrompt/SQLPrompt_7.5.1.1000.exe'
 
 $packageArgs = @{
 	packageName    = $packageName
