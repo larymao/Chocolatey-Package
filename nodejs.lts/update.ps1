@@ -1,6 +1,4 @@
-﻿import-module AU
-
-$releases = 'https://nodejs.org/en/download/'
+﻿Import-Module AU
 
 function global:au_SearchReplace {
     @{

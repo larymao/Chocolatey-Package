@@ -1,6 +1,4 @@
-﻿import-module AU
-
-$releases = 'https://nodejs.org/en/download/'
+﻿Import-Module AU
 
 function global:au_SearchReplace {
     @{
@@ -21,8 +19,8 @@ function global:au_GetLatest {
     
     return @{
         Version = $version
-        URL32 = "https://slproweb.com/" + $url
-        URL64 = "https://slproweb.com/" + $url
+        URL32 = "https://slproweb.com" + $url
+        URL64 = "https://slproweb.com" + $url
     }
 }
 

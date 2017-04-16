@@ -1,8 +1,8 @@
 ﻿$ErrorActionPreference = 'Stop';
 
 $packageName = 'openssl'
-$url32 = 'https://slproweb.com//download/Win32OpenSSL_Light-1_1_0e.exe'
-$url64 = 'https://slproweb.com//download/Win32OpenSSL_Light-1_1_0e.exe'
+$url32 = 'https://slproweb.com/download/Win32OpenSSL_Light-1_1_0e.exe'
+$url64 = 'https://slproweb.com/download/Win32OpenSSL_Light-1_1_0e.exe'
 $toolsPath = Join-Path $(Get-ToolsLocation) $packageName
 
 $packageArgs = @{
