@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
 	<metadata>
 		<id>gmkvextractgui</id>
-		<version>1.9.1</version>
+		<version>1.9.2</version>
 		<packageSourceUrl>https://github.com/echizenryoma/Chocolatey-Packages/tree/master/gmkvextractgui</packageSourceUrl>
 		<owners>echizenryoma</owners>
 		<title>gMKVExtractGUI</title>
