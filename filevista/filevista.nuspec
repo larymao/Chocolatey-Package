@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
 	<metadata>
 		<id>filevista</id>
-		<version>7.9.1.1</version>
+		<version>7.9.2.0</version>
 		<title>FileVista</title>
 		<authors>GleamTech</authors>
 		<owners>echizenryoma</owners>
