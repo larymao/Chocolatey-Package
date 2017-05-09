@@ -1,7 +1,7 @@
 ﻿$ErrorActionPreference = 'Stop'
 
 $packageName = 'sourcetree.portable'
-$url = 'https://downloads.atlassian.com/software/sourcetree/windows/ga/SourceTreeSetup-2.0.19.1.exe'
+$url = 'https://downloads.atlassian.com/software/sourcetree/windows/ga/SourceTreeSetup-2.0.20.1.exe'
 $toolsPath = Split-Path -parent $MyInvocation.MyCommand.Definition
 
 $packageArgs = @{
