@@ -18,7 +18,7 @@ function global:au_GetLatest {
 	
     return @{
         Version = $version
-        URL32 = $url
+        URL64 = $url64
     }
 }
 Update-Package -NoCheckUrl -NoCheckChocoVersion -ChecksumFor none
