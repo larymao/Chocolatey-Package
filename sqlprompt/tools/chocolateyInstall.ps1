@@ -1,7 +1,7 @@
 ﻿$ErrorActionPreference = 'Stop'
 
 $packageName = 'sqlprompt'
-$url = 'https://download.red-gate.com/checkforupdates/SQLPrompt/SQLPrompt_7.5.1.1000.exe'
+$url = 'https://download.red-gate.com/checkforupdates/SQLPrompt/SQLPrompt_8.0.0.1203.exe'
 $toolsPath = Split-Path -parent $MyInvocation.MyCommand.Definition
 
 $packageArgs = @{

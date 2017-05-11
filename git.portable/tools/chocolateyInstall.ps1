@@ -1,8 +1,8 @@
 ﻿$ErrorActionPreference = 'Stop'
 
 $packageName = 'git'
-$url32 = 'https://npm.taobao.org/mirrors/git-for-windows/2.12.2.windows.2/PortableGit-2.12.2.2-32-bit.7z.exe'
-$url64 = 'https://npm.taobao.org/mirrors/git-for-windows/2.12.2.windows.2/PortableGit-2.12.2.2-64-bit.7z.exe'
+$url32 = 'https://npm.taobao.org/mirrors/git-for-windows/2.13.0.windows.1/PortableGit-2.13.0-32-bit.7z.exe'
+$url64 = 'https://npm.taobao.org/mirrors/git-for-windows/2.13.0.windows.1/PortableGit-2.13.0-64-bit.7z.exe'
 $toolsPath = Join-Path $(Get-ToolsLocation) $packageName
 
 $packageArgs = @{
