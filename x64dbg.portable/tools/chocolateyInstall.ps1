@@ -1,7 +1,7 @@
 ﻿$ErrorActionPreference = 'Stop'
 
 $packageName = 'x64dbg.portable'
-$url = 'https://sourceforge.net/projects/x64dbg/files/snapshots/snapshot_2017-05-04_10-30.zip/download'
+$url = 'https://sourceforge.net/projects/x64dbg/files/snapshots/snapshot_2017-05-09_22-02.zip/download'
 $toolsPath = Split-Path $MyInvocation.MyCommand.Definition
 
 $packageArgs = @{
