@@ -1,14 +1,16 @@
 ﻿$ErrorActionPreference = 'Stop'
 
 $packageName = 'sourcetree.portable'
-$url = 'https://downloads.atlassian.com/software/sourcetree/windows/ga/SourceTreeSetup-2.0.20.1.exe'
-$checksum = 'df4fb4abf3385f3a73ec47d83689af73f42367d01ff0afd394b50c1190e01d01'
-$checksumType = 'sha256'
+$url = 'https://www.sourcetreeapp.com/update/windows/ga/SourceTree-2.0.20.1-full.nupkg'
+$checksum = 'f999291148eb0df97610cc801922827a32881e0e'
+$checksumType = 'sha1'
 $toolsPath = Split-Path -parent $MyInvocation.MyCommand.Definition
 
 $packageArgs = @{
     packageName   = $packageName
     url           = $url
+    checksum      = $checksum
+    checksumType  = $checksumType
     unzipLocation = $toolsPath
 }
 Install-ChocolateyZipPackage @packageArgs
