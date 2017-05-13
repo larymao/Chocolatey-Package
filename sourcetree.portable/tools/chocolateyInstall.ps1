@@ -13,14 +13,6 @@ $packageArgs = @{
 }
 Install-ChocolateyZipPackage @packageArgs
 
-$filePath = Get-Item $(Join-Path $toolsPath "SourceTree*.nupkg")
-$packageArgs = @{
-    packageName   = $packageName
-    url           = $filePath
-    unzipLocation = $toolsPath
-}
-Install-ChocolateyZipPackage @packageArgs
-
 Get-Item $(Join-Path $toolsPath "*") -Exclude "*.ps1", "lib" | Remove-Item -Force -Recurse
 $lib = Join-Path $toolsPath "lib"
 $files = Join-Path $(Get-Item $(Join-Path $lib "net*")) "*"
