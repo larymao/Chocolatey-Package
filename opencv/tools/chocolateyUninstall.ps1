@@ -1,7 +1,7 @@
 ﻿$ErrorActionPreference = 'Stop';
 
-$installationPath = Join-Path $(Get-ToolsLocation) 'opencv'
-Remove-Item $installationPath -Recurse -Force
+$OpenCV_HOME = Join-Path $(Get-ToolsLocation) 'opencv'
+Remove-Item $OpenCV_HOME -Recurse -Force
 
 $envPath = [Environment]::GetEnvironmentVariable('Path', [EnvironmentVariableTarget]::Machine) -split ';' -notmatch 'opencv'
 [Environment]::SetEnvironmentVariable('Path', $envPath -join ';', [EnvironmentVariableTarget]::Machine)

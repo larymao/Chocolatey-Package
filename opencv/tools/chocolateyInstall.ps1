@@ -5,7 +5,9 @@ $url64 = 'https://github.com/opencv/opencv/releases/download/3.2.0/opencv-3.2.0-
 $installationPath = Get-ToolsLocation
 $OpenCV_HOME = Join-Path $installationPath 'opencv'
 
-Remove-Item -Path $OpenCV_HOME -Recurse -Force | Out-Null
+if (Test-Path $OpenCV_HOME) {
+    Remove-Item -Path $OpenCV_HOME -Recurse -Force
+}
 
 $packageArgs = @{
     packageName   = $packageName
@@ -16,7 +18,6 @@ Install-ChocolateyZipPackage @packageArgs
 
 $envPath = [Environment]::GetEnvironmentVariable('Path', [EnvironmentVariableTarget]::Machine) -split ';' -notmatch 'opencv'
 [Environment]::SetEnvironmentVariable('Path', $envPath -join ';', [EnvironmentVariableTarget]::Machine)
-
 
 $OpenCV_BIN = Get-ChildItem $OpenCV_HOME -Include "bin" -Directory -Recurse
 foreach ($bin in $OpenCV_BIN) {
