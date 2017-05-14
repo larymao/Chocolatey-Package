@@ -10,6 +10,7 @@ $packageArgs = @{
     url            = $url
     checksum       = $checksum
     checksumType   = $checksumType
+    silentArgs     = "/S"
     validExitCodes = @(0)
 }
 Install-ChocolateyPackage @packageArgs
