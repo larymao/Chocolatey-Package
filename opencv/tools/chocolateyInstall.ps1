@@ -25,10 +25,10 @@ foreach ($bin in $OpenCV_BIN) {
 }
 
 $OpenCV_HOME = Join-Path $OpenCV_HOME 'build'
-Install-ChocolateyEnvironmentVariable -VariableName 'OpenCV_HOME' -VariableValue $OpenCV_HOME -VariableType 'Machine'
+Install-ChocolateyEnvironmentVariable -VariableName 'OpenCV_DIR' -VariableValue $OpenCV_HOME -VariableType 'Machine'
 
 $OpenCV_LIB = Get-ChildItem $OpenCV_HOME -Include "lib" -Directory -Recurse
-Install-ChocolateyEnvironmentVariable -VariableName 'OpenCV_LIB' -VariableValue $OpenCV_LIB -VariableType 'Machine'
+Install-ChocolateyEnvironmentVariable -VariableName 'OpenCV_LIBS' -VariableValue $OpenCV_LIB -VariableType 'Machine'
 
 $OpenCV_INCLUDE = Get-ChildItem $OpenCV_HOME -Include "include" -Directory -Recurse
-Install-ChocolateyEnvironmentVariable -VariableName 'OpenCV_INCLUDE' -VariableValue $OpenCV_HOME -VariableType 'Machine'
+Install-ChocolateyEnvironmentVariable -VariableName 'OpenCV_INCLUDE_DIRS' -VariableValue $OpenCV_HOME -VariableType 'Machine'
