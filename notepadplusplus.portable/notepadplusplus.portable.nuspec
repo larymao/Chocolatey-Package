@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
 	<metadata>
-		<id>notepadplusplus.install</id>
+		<id>notepadplusplus.portable</id>
 		<version>7.4</version>
-		<title>Notepad++ (Install)</title>
+		<title>Notepad++ (Portable)</title>
 		<authors>Don Ho</authors>
 		<owners>echizenryoma</owners>
 		<licenseUrl>https://github.com/notepad-plus-plus/notepad-plus-plus/blob/master/LICENSE</licenseUrl>
