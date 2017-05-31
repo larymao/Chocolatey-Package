@@ -1,7 +1,7 @@
 ﻿$ErrorActionPreference = 'Stop'
 
 $packageName = 'openssl'
-$url = 'https://www.npcglib.org/~stathis/downloads/openssl-1.1.0e-vs2017.7z'
+$url = 'https://www.npcglib.org/~stathis/downloads/openssl-1.1.0f-vs2017.7z'
 $installationPath = Get-ToolsLocation
 
 $OpenSSL_HOME = Join-Path $installationPath $packageName
