@@ -1,8 +1,8 @@
 ﻿$ErrorActionPreference = 'Stop'
 
 $packageName  = 'k-litecodecpackmega'
-$url          = 'http://files2.codecguide.com/K-Lite_Codec_Pack_1320_Mega.exe'
-$checksum     = '1c5e021bce8e2905c6658a387614b57291bb5508cc9b048731ec188e9e3e76d1'
+$url          = 'http://files2.codecguide.com/K-Lite_Codec_Pack_1323_Mega.exe'
+$checksum     = '9b2982f18ad5eb99ee6a5c42149784224fd949488a4f98cc3fc43768b4065c5f'
 $checksumType = 'sha256'
 
 $packageArgs = @{
