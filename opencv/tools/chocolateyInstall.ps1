@@ -31,4 +31,4 @@ $OpenCV_LIB = Get-ChildItem $OpenCV_HOME -Include "lib" -Directory -Recurse
 Install-ChocolateyEnvironmentVariable -VariableName 'OpenCV_LIBS' -VariableValue $OpenCV_LIB -VariableType 'Machine'
 
 $OpenCV_INCLUDE = Get-ChildItem $OpenCV_HOME -Include "include" -Directory -Recurse
-Install-ChocolateyEnvironmentVariable -VariableName 'OpenCV_INCLUDE_DIRS' -VariableValue $OpenCV_HOME -VariableType 'Machine'
+Install-ChocolateyEnvironmentVariable -VariableName 'OpenCV_INCLUDE_DIRS' -VariableValue $OpenCV_INCLUDE -VariableType 'Machine'

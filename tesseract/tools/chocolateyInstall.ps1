@@ -11,4 +11,5 @@ $PackageArgs = @{
 }
 Install-ChocolateyZipPackage @PackageArgs
 Install-ChocolateyPath -PathToInstall $InstallationPath -PathType 'Machine'
+Install-ChocolateyEnvironmentVariable -VariableName 'TESSDATA_PREFIX' -VariableValue $(Join-Path $InstallationPath 'tessdata') -VariableType 'Machine'
 Remove-Item -Path $(Join-Path $InstallationPath '$PLUGINSDIR') -Recurse -Force
