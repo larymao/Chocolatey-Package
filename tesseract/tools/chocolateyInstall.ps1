@@ -1,7 +1,7 @@
 ﻿$ErrorActionPreference = 'Stop'
 
 $PackageName = 'tesseract'
-$Url = 'http://digi.bib.uni-mannheim.de/tesseract/tesseract-ocr-setup-3.05.01-20170602.exe'
+$Url = 'https://digi.bib.uni-mannheim.de/tesseract/tesseract-ocr-setup-3.05.01-20170602.exe'
 $InstallationPath = Join-Path $(Get-ToolsLocation) $PackageName
 
 $PackageArgs = @{
@@ -11,4 +11,4 @@ $PackageArgs = @{
 }
 Install-ChocolateyZipPackage @PackageArgs
 Install-ChocolateyPath -PathToInstall $InstallationPath -PathType 'Machine'
-Remove-Item -Path $(Join-Path $InstallationPath '`$PLUGINSDIR') -Recurse -Force
+Remove-Item -Path $(Join-Path $InstallationPath '$PLUGINSDIR') -Recurse -Force
