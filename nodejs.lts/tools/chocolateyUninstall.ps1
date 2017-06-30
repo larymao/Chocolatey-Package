@@ -11,7 +11,7 @@ if (!$envPath.ToLower().Contains($toolsPath.ToLower())) {
 }
 $envPath = $envPath -split ";"
 $envPath = $envPath -ne $toolsPath
-[Environment]::SetEnvironmentVariable('Path', $envPath, [System.EnvironmentVariableTarget]::Machine)
+[Environment]::SetEnvironmentVariable('Path', $envPath -join ';', [System.EnvironmentVariableTarget]::Machine)
 
 if (Test-Path $toolsPath) {
     Remove-Item -Path $toolsPath -Recurse -Force
