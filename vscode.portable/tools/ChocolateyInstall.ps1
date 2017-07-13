@@ -11,9 +11,4 @@ $PackageArgs = @{
 }
 Install-ChocolateyZipPackage @PackageArgs
 
-$FileName = [IO.Path]::GetFileNameWithoutExtension($Url)
-$UnzipPath = $FileName.SubString(0, $FileName.LastIndexOf('-'))
-$UnzipPath = Join-Path $ToolsPath $UnzipPath 
-Move-Item -Path $(Join-Path $UnzipPath "*") -Destination $ToolsPath -Force
-Remove-Item -Path $UnzipPath -Recurse -Force
 Get-ChildItem $ToolsPath -Include "*.exe" -Exclude "Code.exe" -Recurse | ForEach-Object { New-Item "$($_.FullName).ignore" -Type file -Force | Out-Null }
