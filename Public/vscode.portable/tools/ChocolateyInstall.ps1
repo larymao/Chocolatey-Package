@@ -1,7 +1,7 @@
 ﻿$ErrorActionPreference = 'Stop'
 
 $PackageName = 'vscode.portable'
-$Url = 'https://vscode.cdn.azure.cn/stable/b8cd5b9556d8b70ea560d35b903422363f6c5c40/VSCode-win32-ia32-1.14.0.zip'
+$Url = 'https://az764295.vo.msecnd.net/stable/2648980a697a4c8fb5777dcfb2ab110cec8a2f58/VSCode-win32-ia32-1.14.1.zip'
 $ToolsPath = Split-Path $MyInvocation.MyCommand.Definition
 
 $PackageArgs = @{
