@@ -35,8 +35,5 @@ $Options = [ordered]@{
 if ($ForcedPackages) {
     Write-Host "FORCED PACKAGES: $ForcedPackages"
 }
-if ($ForcedPackages) {
-    Write-Host "FORCED PACKAGES: $ForcedPackages"
-}
 $global:au_Root = $Root
 $global:info = Update-AUPackages -Name $Name -Options $Options
