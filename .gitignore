@@ -10,3 +10,5 @@
 !patch.exe
 
 update_vars*.ps1
+
+*.md
